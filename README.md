@@ -1,172 +1,57 @@
-# customer_behaviour_analysis
+# Customer Behaviour Analysis
 
-## Overview
-
-This project demonstrates a complete data analytics workflow using Python, PostgreSQL, and Power BI. The project involves loading and processing a dataset, performing Exploratory Data Analysis (EDA), cleaning and transforming data, executing SQL queries in PostgreSQL, and building an interactive Power BI dashboard for business insights and visualization.
+An end-to-end data project where I explored customer shopping patterns using Python, PostgreSQL, and Power BI.
 
 ---
 
-## Project Objectives
+## What is this project about?
 
-* Import and analyze raw datasets using Python
-* Perform data cleaning and preprocessing
-* Conduct Exploratory Data Analysis (EDA)
-* Store and query data using PostgreSQL
-* Build an interactive dashboard in Power BI
-* Generate meaningful business insights from the data
+I worked on a retail customer dataset to understand how people shop — what they buy, how often, what they spend, and how factors like age, gender, and season affect their behaviour. The idea was to go beyond just cleaning data and actually connect it to a database and build a dashboard on top of it.
 
 ---
 
-## Technologies Used
+## Project Files
 
-### Programming & Analysis
-
-* Python
-* Pandas
-
-
-### Database
-
-* PostgreSQL
-
-### Visualization
-
-* Power BI
-
-### Tools
-
-* Jupyter Notebook
-* pgAdmin
-
----
-
-## Project Workflow
-
-### 1. Data Loading
-
-* Imported dataset using Python
-* Read CSV/Excel files using Pandas
-* Checked dataset structure and summary
-
-### 2. Data Cleaning
-
-* Handled missing values
-* Removed duplicates
-* Corrected data types
-* Renamed columns for consistency
-* Treated outliers where necessary
-
-### 3. Exploratory Data Analysis (EDA)
-
-Performed:
-
-* Statistical analysis
-* Correlation analysis
-* Distribution analysis
-* Trend identification
-* Category-wise comparisons
-
-Visualization techniques used:
-
-* Bar charts
-* Line plots
-* Histograms
-* Heatmaps
-* Pie charts
-
----
-
-## PostgreSQL Integration
-
-### Database Operations
-
-* Created database and tables
-* Imported cleaned dataset into PostgreSQL
-* Executed SQL queries for analysis
-
-### SQL Queries Included
-
-* Aggregate functions
-* GROUP BY analysis
-* JOIN operations
-* Filtering and sorting
-* Subqueries
-* Business insight queries
-
-
-## Power BI Dashboard
-
-The Power BI dashboard provides interactive visualizations and business insights including:
-
-* Sales performance analysis
-* Customer behavior trends
-* Revenue insights
-* Regional analysis
-* KPI tracking
-
-### Dashboard Features
-
-* Interactive filters and slicers
-* Dynamic charts
-* KPI cards
-* Drill-down analysis
-* Trend visualization
-
----
-
-## Project Structure
-
-```bash
-Data-Analytics-Project/
+customer-behaviour-analysis/
 │
-├── dataset/
-│   └── data.csv
-│
-├── notebooks/
-│   └── eda_analysis.ipynb
-│
-├── sql/
-│   └── queries.sql
-│
-├── dashboard/
-│   └── powerbi_dashboard.pbix
-│
-├── images/
-│   └── dashboard_screenshot.png
-│
-└── README.md
-```
+├── customer_behaviour_analysis.ipynb   # Data cleaning and feature engineering
+├── customer_behaviour.sql              # PostgreSQL database
+└── customer_behaviour_dashboard.pbix   # Power BI dashboard
 
 ---
 
-## Key Insights
+## Tools Used
 
-* Identified top-performing categories/products
-* Analyzed customer purchasing behavior
-* Found trends and seasonal patterns
-* Improved understanding through dashboard visualization
-
----
-
-## Future Improvements
-
-* Deploy dashboard online
-* Automate ETL pipeline
-* Add machine learning predictions
-* Connect real-time database updates
+| Tool | Why |
+|---|---|
+| Python (Pandas) | Cleaning and transforming the data |
+| PostgreSQL | Storing the cleaned data in a database |
+| SQLAlchemy | Connecting Python to PostgreSQL |
+| Power BI | Building the dashboard |
+| Jupyter Notebook | Writing and running the analysis |
 
 ---
 
-## Conclusion
+## Dataset
 
-This project demonstrates end-to-end data analytics skills including data preprocessing, SQL analysis, visualization, and dashboard development. It showcases the practical use of Python, PostgreSQL, and Power BI in solving real-world business problems.
+Retail customer shopping data with around 900 records covering age, gender, items purchased, payment method, purchase amount, season, review ratings, and purchase frequency.
 
 ---
 
-## Author
+## What I did in the Notebook
 
-**Sumit Gupta**
+- Loaded the raw CSV and did a full inspection
+- Handled missing values in review ratings using category-wise median
+- Cleaned up column names to make them consistent
+- Created an age group column by dividing customers into Young Adult, Adult, Middle-aged, and Senior
+- Mapped purchase frequency text like "Weekly" or "Monthly" into actual number of days
+- Found that discount applied and promo code used were identical columns, so dropped one
+- Finally pushed the clean data into PostgreSQL
 
-## License
+---
 
-This project is for educational and portfolio purposes.
+## Dashboard
+
+Built an interactive Power BI dashboard covering revenue by category and season, customer split by age and gender, subscription vs non-subscription behaviour, payment method preferences, and average ratings by category.
+
+---
